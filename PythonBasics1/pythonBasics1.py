@@ -43,5 +43,12 @@ def starts_with_vowel(s):
 
 def max_min_sum(arr):
     # YOUR CODE HERE
+    if len(arr) == 0:
+        return 0
+    if len(arr) == 1:
+        return arr[0]
+
+    for x in arr:
+        return (max(arr) + min(arr))
 
     return
