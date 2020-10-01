@@ -27,8 +27,12 @@ def starts_with(s, char):
 
 def starts_with_vowel(s):
     # YOUR CODE HERE
+    if s == '':
+        return False
+    if s[0] == 'a' or s[0] == 'e' or s[0] == 'i' or s[0] == 'o' or s[0] == 'u' or s[0] == 'A' or s[0] == 'E' or s[0] == 'I' or s[0] == 'O' or s[0] == 'U':
+        return True
 
-    return
+    return False
 
 # Part C. max_min_sum
 # Define a function max_min_sum(arr) that takes an array and returns the sum
