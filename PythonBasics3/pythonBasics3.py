@@ -30,8 +30,10 @@ def starts_with_number(s):
 
 def starts_with_consonant(s):
     # YOUR CODE HERE
+    if re.search("^[^AEIOUaeiou#]", s):
+        return True
 
-    return
+    return False
 
 
 # Part C. binary_multiple_of_4

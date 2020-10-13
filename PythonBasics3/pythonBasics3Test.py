@@ -6,18 +6,21 @@ import pythonBasics3
 # the simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
     else:
         prefix = '  X '
-    print ('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
+    print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
 
 # Calls the functions in pythonBasics3 with interesting inputs.
+
+
 def main():
     # set which functions to test
-    starts_with_number = True
-    starts_with_consonant = False
+    starts_with_number = False
+    starts_with_consonant = True
     binary_multiple_of_4 = False
 
     if starts_with_number:
@@ -60,13 +63,13 @@ def main():
         testset1 = ["1010101010100", "0101010101010100", "100", "0"]
 
         for case in testset1:
-            test(pythonBasics3.binary_multiple_of_4(case),True)
+            test(pythonBasics3.binary_multiple_of_4(case), True)
 
         testset2 = ["101", "1000000000001", "1001", "a100", ""]
 
         for case in testset2:
-            test(pythonBasics3.binary_multiple_of_4(case),False)
+            test(pythonBasics3.binary_multiple_of_4(case), False)
 
 
 if __name__ == '__main__':
-  main()
+    main()
