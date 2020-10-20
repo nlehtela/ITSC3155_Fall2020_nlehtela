@@ -42,5 +42,16 @@ def array2d_2_dict(contact_info, contacts):
 
 def dict_2_array(contacts):
     # YOUR CODE HERE
+    name = []
+    email = []
+    phone = []
 
-    return
+    if len(list(contacts.keys())) == 0:
+        return [[], [], []]
+
+    for x in list(contacts.keys()):
+        name.append(x)
+        email.append(contacts[x]['email'])
+        phone.append(contacts[x]['phone'])
+
+    return [email, phone, name]
