@@ -19,8 +19,8 @@ def test(got, expected):
 def main():
     # set which functions to test
     array_2_dict = True
-    array2d_2_dict = True
-    dict_2_array = True
+    array2d_2_dict = False
+    dict_2_array = False
 
     if array_2_dict:
         print('array_2_dict')
@@ -29,14 +29,17 @@ def main():
         contact_dict = {"Bob Smith": "", "Sally Field": "", "Mark Dole": ""}
         test(pythonBasics4.array_2_dict(emailArray, contact_dict), contact_dict)
 
-        emailArray = ["bobsmith@example.com", "sallyfield@example.com", "markdole@example.com"]
+        emailArray = ["bobsmith@example.com",
+                      "sallyfield@example.com", "markdole@example.com"]
         contact_dict = {"Bob Smith": "", "Sally Field": "", "Mark Dole": ""}
         test(pythonBasics4.array_2_dict(emailArray, contact_dict),
              {"Bob Smith": "bobsmith@example.com", "Sally Field": "sallyfield@example.com",
               "Mark Dole": "markdole@example.com"})
 
-        emailArray = ["bobsmith@example.com", "sallyfield@example.com", "markdole@example.com", "foo@example.com"]
-        contact_dict = {"Bob Smith": "", "Sally Field": "", "Mark Dole": "", "Foo Fighter": ""}
+        emailArray = ["bobsmith@example.com", "sallyfield@example.com",
+                      "markdole@example.com", "foo@example.com"]
+        contact_dict = {"Bob Smith": "", "Sally Field": "",
+                        "Mark Dole": "", "Foo Fighter": ""}
         test(pythonBasics4.array_2_dict(emailArray, contact_dict),
              {"Bob Smith": "bobsmith@example.com", "Sally Field": "sallyfield@example.com",
               "Mark Dole": "markdole@example.com", "Foo Fighter": "foo@example.com"})
@@ -45,13 +48,16 @@ def main():
         print('array2d_2_dict')
         info_array = []
         contact_dict = {"Bob Smith": "", "Sally Field": "", "Foo Fighter": ""}
-        test(pythonBasics4.array2d_2_dict(info_array, contact_dict), contact_dict)
+        test(pythonBasics4.array2d_2_dict(
+            info_array, contact_dict), contact_dict)
 
         info_array = [[]]
         contact_dict = {"Bob Smith": "", "Sally Field": "", "Foo Fighter": ""}
-        test(pythonBasics4.array2d_2_dict(info_array, contact_dict), contact_dict)
+        test(pythonBasics4.array2d_2_dict(
+            info_array, contact_dict), contact_dict)
 
-        info_array = [["bobsmith@example.com", "555-555-5555"], ["sallyfield@example.com", "111-111-1111"]]
+        info_array = [["bobsmith@example.com", "555-555-5555"],
+                      ["sallyfield@example.com", "111-111-1111"]]
         contact_dict = {"Bob Smith": "", "Sally Field": ""}
         test(pythonBasics4.array2d_2_dict(info_array, contact_dict),
              {"Bob Smith": {"email": "bobsmith@example.com", "phone": "555-555-5555"},

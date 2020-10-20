@@ -7,18 +7,28 @@
 # # Part A.
 def array_2_dict(emails, contacts):
     # YOUR CODE HERE
+    if len(emails) == 0:
+        return contacts
 
-    return
+    count = 0
+    for x in emails:
+        contacts[list(contacts.keys())[count]] = x
+        count = count + 1
+
+    return contacts
 
 # # Part B.
+
+
 def array2d_2_dict(contact_info, contacts):
     # YOUR CODE HERE
 
     return
 
 # # Part C.
+
+
 def dict_2_array(contacts):
     # YOUR CODE HERE
 
     return
-
