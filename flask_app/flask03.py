@@ -24,7 +24,8 @@ def get_notes():
              2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'},
              3: {'title': 'Third note', 'text': 'This is my third note', 'date': '10-3-2020'}
              }
-    return render_template('notes.html', notes=notes)
+    a_user = {'name': 'Nicholas Lehtela', 'email': 'nlehtela@uncc.edu'}
+    return render_template('notes.html', notes=notes, user=a_user)
 
 
 @app.route('/notes/<note_id>')
@@ -33,7 +34,8 @@ def get_note(note_id):
              2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'},
              3: {'title': 'Third note', 'text': 'This is my third note', 'date': '10-3-2020'}
              }
-    return render_template('note.html', note=notes[int(note_id)])
+    a_user = {'name': 'Nicholas Lehtela', 'email': 'nlehtela@uncc.edu'}
+    return render_template('note.html', note=notes[int(note_id)], user=a_user)
 
 
 @app.route('/notes/new')
