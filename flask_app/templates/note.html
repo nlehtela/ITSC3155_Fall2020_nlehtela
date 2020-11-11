@@ -24,8 +24,7 @@
                 <th>Date</th>
             </tr>
             <tr>
-                <td>{{ note.title }}</td>
-                <td>{{ note.text }}</td>
+                <td><a href="{{ url_for('get_note', note_id=note.id) }}">{{ note.title }}</a></td>
                 <td>{{ note.date }}</td>
             </tr>
         </table>
