@@ -34,7 +34,7 @@ with app.app_context():
 # get called. What it returns is what is shown as the web page
 
 
-@app.route('/index')
+@app.route('/')
 def index():
     a_user = db.session.query(User).filter_by(email='nlehtela@uncc.edu').one()
     return render_template('index.html', user=a_user)
