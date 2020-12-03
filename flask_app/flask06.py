@@ -108,7 +108,7 @@ def update_note(note_id):
                 email='ressenma@uncc.edu').one()
 
             my_note = db.session.query(Note).filter_by(id=note_id).one()
-            return render_template('new.html', note=my_note, user=a_user)
+            return render_template('new.html', note=my_note, user=session['user'])
     else:
         return redirect(url_for('login'))
 
