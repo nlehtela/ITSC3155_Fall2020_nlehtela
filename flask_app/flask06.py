@@ -18,28 +18,24 @@ from forms import RegisterForm, LoginForm, CommentForm
 
 app = Flask(__name__)     # create an app
 
-# Import the database instance
-
-# Configure the database connection, Set the name and location of the database file.
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flask_note_app.db'
-
-# Set the SQLALCHEMY_TRACK_MODIFICATIONS configuration option to False to disable a feature of
-# Flask-SQLAlchemy that we do not need, which is to signal the application every time a change is about to be made in the database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 app.config['SECRET_KEY'] = 'SE3155'
-
 #  Bind SQLAlchemy db object to this Flask app
 db.init_app(app)
-
 # Setup models
 with app.app_context():
     db.create_all()   # run under the app context
 
+# notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '10-1-2020'},
+    # 2: {'title': 'Second note', 'text': 'This is my second note', 'date': '10-2-2020'},
+    # 3: {'title': 'Third note', 'text': 'This is my third note', 'date': '10-3-2020'}
+    # }
 
 # @app.route is a decorator. It gives the function "index" special powers.
 # In this case it makes it so anyone going to "your-url/" makes this function
 # get called. What it returns is what is shown as the web page
+
 
 @app.route('/')
 @app.route('/index')
@@ -54,6 +50,7 @@ def get_notes():
     if session.get('user'):
         my_notes = db.session.query(Note).filter_by(
             user_id=session['user_id']).all()
+
         return render_template('notes.html', notes=my_notes, user=session['user'])
     else:
         return redirect(url_for('login'))
@@ -110,7 +107,7 @@ def update_note(note_id):
                 email='ressenma@uncc.edu').one()
 
             my_note = db.session.query(Note).filter_by(id=note_id).one()
-            return render_template('new.html', note=my_note, user=session['user'])
+            return render_template('new.html', note=my_note, user=a_user)
     else:
         return redirect(url_for('login'))
 
